@@ -334,7 +334,8 @@ execute ./configure  --arch=64 --prefix=${WORKSPACE} --extra-cflags="-I$WORKSPAC
 	--enable-libopencore_amrwb \
 	--enable-libopencore_amrnb \
 	--enable-filters \
-	--enable-libvidstab 
+	--enable-libvidstab \
+  --disable-securetransport
 	# enable all filters
 	# enable AAC de/encoding via libfdk-aac [no]
 	# enable detecting cpu capabilities at runtime (smaller binary)
@@ -354,6 +355,7 @@ execute ./configure  --arch=64 --prefix=${WORKSPACE} --extra-cflags="-I$WORKSPAC
 	# build static libraries [no]
 	# disable debugging symbols
 	# disable build shared libraries [no]
+	# disable the use of the private security framework for sandboxed Mac Apps
 execute make -j $MJOBS
 execute make install
 
